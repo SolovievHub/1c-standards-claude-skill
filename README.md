@@ -6,10 +6,12 @@
 
 Набор правил из **Системы стандартов и методик разработки конфигураций для платформы 1С:Предприятие 8**, извлечённых из конфигурации **АПК (Автоматизированная проверка конфигураций) v1.2.9.124** от ООО "1С-Софт".
 
-- 664 правила в 27 категориях
+- 664 правила в 29 файлах
 - Стандарты "Системы стандартов" (именование, структура модулей, запросы, производительность, безопасность и др.)
 - Требования "1С:Совместимо" (1С:Предприятие 8.3)
 - Требования по локализации, клиент-серверному взаимодействию, проектированию интерфейсов
+- Встроенные проверки АПК (парсинг структуры модуля, документация параметров, права ролей, система исключений)
+- Словарь соответствия русских и английских терминов 1С (1044 термина)
 
 ## Установка
 
@@ -72,15 +74,13 @@ ln -s /path/to/1c-standards-claude-skill/1c-standards .claude/skills/1c-standard
 ```
 1c-standards/
 ├── SKILL.md           # Инструкции для Claude (точка входа)
-└── rules/             # 27 файлов с правилами
+└── rules/             # 29 файлов с правилами
+    ├── 00-builtin-checks.md                # Встроенные проверки АПК
+    ├── 00-terminology-dictionary.md        # Словарь терминов рус/англ (1044)
     ├── 01-sozdanie-i-izmenenie-obektov-metadannyh.md
     ├── 02-nastrojka-prav-dostupa-k-dannym.md
     ├── 03-realizaciya-obrabotki-dannyh.md
     ├── 04-soglasheniya-pri-napisanii-koda.md
-    ├── 05-realizaciya-obmena-dannymi.md
-    ├── 06-razrabotka-i-ispolzovanie-bibliotek.md
-    ├── 07-proektirovanie-interfejsov-dlya-8-3.md
-    ├── 08-razrabotka-polzovatelskih-interfejsov.md
     ├── ...
     └── 27-ispolzovanie-platformennozavisimogo-koda.md
 ```
@@ -88,6 +88,8 @@ ln -s /path/to/1c-standards-claude-skill/1c-standards .claude/skills/1c-standard
 ## Источник правил
 
 Правила извлечены из справочника "Требования" конфигурации АПК v1.2.9.124 с помощью специальной обработки экспорта. Описание стандартов доступно на [its.1c.ru/db/v8std](https://its.1c.ru/db/v8std).
+
+Если вы хотите сгенерировать правила самостоятельно из своей базы АПК (например, более новой версии), используйте: **[1c-standards-claude-skill-creator](https://github.com/SolovievHub/1c-standards-claude-skill-creator)**
 
 ## Лицензия
 
